@@ -28,7 +28,7 @@ function playDrawPoker() {
 
    let myDeck = new pokerDeck();
    myDeck.shuffle();
-
+   let myHand = new pokerHand(5);
 
    bankBox.value = pokerGame.currentBank;
 
