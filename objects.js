@@ -38,7 +38,12 @@
          }
       }
 
-
+      this.shuffle = function() {
+         this.cards.sort(function() {
+            return 0.5 - Math.random();
+         });
+      };
+      
 
 
 
