@@ -26,6 +26,10 @@ function playDrawPoker() {
    pokerGame.currentBank = 500;
    pokerGame.currentBet = 25;
 
+   let mydeck = new pokerDeck();
+   mydeck.shuffle();
+
+
    bankBox.value = pokerGame.currentBank;
 
    betSelection.onchange = function() {
