@@ -26,6 +26,17 @@
          this.rank = cardRank;
       }
 
+      function pokerDeck() {
+         let suits = ["clubs", "diamonds", "hearts", "spades"];
+         let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10",
+                      "jack", "queen", "king", "ace"];
+         this.cards = [];
+         for (let i=0; i < 4; i++) {
+            for (let j=0; j < 13; j++) {
+               this.cards.push(new pokerCard(suits[i], ranks[j]));
+            }
+         }
+      }
 
 
 
