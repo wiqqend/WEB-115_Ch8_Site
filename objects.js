@@ -25,7 +25,9 @@
          this.suit = cardSuit;
          this.rank = cardRank;
       }
-
+      pokerCard.prototype.cardImage = function() {
+         return this.rank + "_" + this.suit + ".png";
+      };
       function pokerDeck() {
          let suits = ["clubs", "diamonds", "hearts", "spades"];
          let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -36,51 +38,27 @@
                this.cards.push(new pokerCard(suits[i], ranks[j]));
             }
          }
-      function pokerHand(handLength) {
-         this.cards = new Array(handLength);
-      }
-
-      this.shuffle = function() {
+         this.shuffle = function() {
          this.cards.sort(function() {
             return 0.5 - Math.random();
          });
-      };
-      this.dealTo = function(pokerHand) {
-         let cardsDealt = pokerHand.cards.length;
-         pokerHand.cards = this.cards.slice(0, cardsDealt);
-      };
-   }; 
+         };
+         this.dealTo = function(pokerHand) {
+            let cardsDealt = pokerHand.cards.length;
+            pokerHand.cards = this.cards.splice(0, cardsDealt);
+         };
 
+      }
+      function pokerHand(handLength) {
+         this.cards = new Array(handLength);
+      }
+      pokerHand.prototype.replaceCard = function(index, pokerDeck) {
+         this.cards[index] = pokerDeck.cards.shift();
+      }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-   /* ------------------------------------------------+
-   | The handType() function returns a text string of |
-   | the type of hand held by 5-card poker hand.      |
-   +-------------------------------------------------*/
-   function handType(pokerHand) {       
+      pokerHand.prototype.getHandValue = function() {
+         return handType(this);
+         function handType(pokerHand) {       
       /* Determine the rank value of each card in the hand
          by creating a property named rankValue         */
       for (let i = 0; i < pokerHand.cards.length; i++) {
@@ -185,7 +163,40 @@
          if (sets === "Pair" || sets === "none") {sets = "No Winner";}
          return sets;
       }   
-   }
+      }
+      }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   /* ------------------------------------------------+
+   | The handType() function returns a text string of |
+   | the type of hand held by 5-card poker hand.      |
+   +-------------------------------------------------*/
+   
    /* ------------------------------------------------+
    |             End of the  handType() function      |
    +-------------------------------------------------*/   

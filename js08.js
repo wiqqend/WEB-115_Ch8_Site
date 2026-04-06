@@ -38,6 +38,7 @@ function playDrawPoker() {
     
    
       dealButton.addEventListener("click", function() {
+         console.log("wrks");
       if (pokerGame.currentBank >= pokerGame.currentBet) {
          // Enable the Draw and Stand buttons after the initial deal
          dealButton.disabled = true;        // Turn off the Deal button
@@ -52,8 +53,20 @@ function playDrawPoker() {
          myDeck.shuffle();
       }
       myDeck.dealTo(myHand);
+      for (let i = 0; i < cardImages.length; i++) {
+         cardImages[i].src = myHand.cards[i].cardImage();
+      
+         cardImages[i].onclick = function() {
+            if (this.src.includes("cardback.png")) {
+               this.src = myHand.cards[i].cardImage();
+            } else {
+               this.src = "cardback.png";
+            }
+   
+         }
+   
+      }
       console.log(myDeck, myHand);
-
       } else {
          statusBox.textContent = "Infufficient funds.";
       }
@@ -67,8 +80,12 @@ function playDrawPoker() {
       drawButton.disabled = true;         // Turn off the Draw button
       standButton.disabled = true;        // Turn off the Stand Button
       
-
-
+      for (let i = 0; i < cardImages.length; i++) {
+         if (cardImages[i].src.includes("cardback.png")) {
+            myHand.replaceCard(i, myDeck);
+            cardImages[i].src = myHand.cards[i].cardImage();
+         }
+      }
    });
    
     
