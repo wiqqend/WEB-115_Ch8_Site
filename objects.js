@@ -36,7 +36,9 @@
                this.cards.push(new pokerCard(suits[i], ranks[j]));
             }
          }
-      
+      function pokerHand(handLength) {
+         this.cards = new Array(handLength);
+      }
 
       this.shuffle = function() {
          this.cards.sort(function() {
