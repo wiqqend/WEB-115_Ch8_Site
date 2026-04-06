@@ -25,6 +25,12 @@ function playDrawPoker() {
 
    pokerGame.currentBank = 500;
    pokerGame.currentBet = 25;
+
+   bankBox.value = pokerGame.currentBank;
+
+   betSelection.onchange = function() {
+      pokerGame.currentBet = parseInt(this.value);
+   }
     
    
       dealButton.addEventListener("click", function() {
