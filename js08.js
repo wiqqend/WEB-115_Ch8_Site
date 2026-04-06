@@ -22,6 +22,9 @@ function playDrawPoker() {
    let betSelection = document.getElementById("bet");
    let bankBox = document.getElementById("bank");
    let cardImages = document.querySelectorAll("img.cardImg");
+
+   pokerGame.currentBank = 500;
+   pokerGame.currentBet = 25;
     
    
       dealButton.addEventListener("click", function() {
