@@ -17,7 +17,7 @@
          currentBet: null,
          placeBet: function() {
             this.currentBank -= this.currentBet;
-            return this.currentBet;
+            return this.currentBank;
          }
       };
 
