@@ -36,14 +36,14 @@
                this.cards.push(new pokerCard(suits[i], ranks[j]));
             }
          }
-      }
+      
 
       this.shuffle = function() {
          this.cards.sort(function() {
             return 0.5 - Math.random();
          });
       };
-      
+   }; 
 
 
 
