@@ -33,7 +33,7 @@ function playDrawPoker() {
          standButton.disabled = false;      // Turn on the Stand Button
          statusBox.textContent = "";        // Erase any status messages
          
-
+      }
    });
    
    
