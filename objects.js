@@ -5,8 +5,8 @@
       Chapter case   
 
       Custom Objects Used in Poker Games
-      Author: 
-      Date:       
+      Author: jacob h
+      Date:       4/6/26
 
       Filename:       objects.js
  */

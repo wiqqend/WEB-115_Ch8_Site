@@ -4,8 +4,8 @@
       Chapter case   
 
       Draw Poker Game using Object Oriented Programming
-      Author: 
-      Date:       
+      Author: jacob h
+      Date:       4/6/26
 
       Filename:       js08.js
  */
