@@ -21,7 +21,10 @@
          }
       };
 
-
+      function pokerCard(cardSuit, cardRank) {
+         this.suit = cardSuit;
+         this.rank = cardRank;
+      }
 
 
 
